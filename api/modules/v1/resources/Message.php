@@ -10,7 +10,7 @@ class Message extends \api\modules\v1\models\Message
 {
     public function fields()
     {
-        return ['id', 'text', 'user_id', 'created_at'];
+        return ['id', 'text', 'user_id', 'created_at', 'username'];
     }
 
     public function extraFields()

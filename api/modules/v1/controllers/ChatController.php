@@ -120,12 +120,12 @@ class ChatController extends \yii\rest\Controller
     }
 
     /**
-     * @param string $id
+     * @param string $chatId
      * @throws HttpException
      */
-    public function actionDelete(string $id)
+    public function actionDelete(string $chatId)
     {
-        $chat = $this->findModel($id);
+        $chat = $this->findModel($chatId);
         $chat->deleted_at = time();
         $chat->save();
     }

@@ -125,10 +125,9 @@ class ChatController extends \yii\rest\Controller
      */
     public function actionDelete(string $id)
     {
-        /** @var Message $message */
-        $message = $this->findModel($id);
-        $message->deleted_at = time();
-        $message->save();
+        $chat = $this->findModel($id);
+        $chat->deleted_at = time();
+        $chat->save();
     }
 
     /**
@@ -153,10 +152,12 @@ class ChatController extends \yii\rest\Controller
     }
 
     public function actionDeleteMessage($messageId) {
-        Message::deleteAll([
+        $message = Message::findOne([
             'id' => $messageId,
-            'user_id' => \Yii::$app->user->id
+            'user_id' => \Yii::$app->user->id,
         ]);
+        $message->deleted_at = time();
+        $message->save();
     }
 
     public function actionEnter($chatId) {
@@ -180,7 +181,7 @@ class ChatController extends \yii\rest\Controller
      * @return array|null|\yii\db\ActiveRecord
      * @throws HttpException
      */
-    protected function findModel($id)
+    protected function findModel($id): Chat
     {
         $model = Chat::find()
             ->where(['deleted_at' => null])

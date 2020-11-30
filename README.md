@@ -8,6 +8,8 @@
 
 [Authentication and authorization](api/modules/v1/controllers/ChatController.php#L25-36)
 
+[Routing](api/config/_urlManager.php#L8)
+
 - &plus; Soft deletion of chats and messages
 - &minus; No swagger API description
 - &minus; No search models for resources

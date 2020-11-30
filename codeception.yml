@@ -1,8 +1,5 @@
 include:
   - tests/common
-  - tests/console
-  - tests/backend
-  - tests/frontend
   - tests/api
 
 paths:

@@ -9,6 +9,7 @@ use yii\web\Response;
 
 class Module extends \yii\base\Module
 {
+
     /** @var string */
     public $controllerNamespace = 'api\modules\v1\controllers';
 

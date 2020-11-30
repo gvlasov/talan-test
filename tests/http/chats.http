@@ -1,0 +1,44 @@
+### https://www.jetbrains.com/help/idea/exploring-http-syntax.html#example-working-with-environment-files
+
+### Create new chat
+POST http://api.yii2-starter-kit.localhost/v1/chat
+Content-Type: application/x-www-form-urlencoded
+X-Api-Key: {{token}}
+
+Chat[title]=Main chat
+
+### Send message in chat
+POST http://api.yii2-starter-kit.localhost/v1/chat/1/message
+Content-Type: application/x-www-form-urlencoded
+X-Api-Key: {{token}}
+
+Message[text]=hello from UTC+5
+
+### Delete message from chat
+DELETE http://api.yii2-starter-kit.localhost/v1/message/1
+Content-Type: application/x-www-form-urlencoded
+X-Api-Key: {{token}}
+
+### List existing chats
+GET http://api.yii2-starter-kit.localhost/v1/chat/list
+X-Api-Key: {{token}}
+
+### Get messages in a chat
+GET http://api.yii2-starter-kit.localhost/v1/chat/1/messages
+X-Api-Key: {{token}}
+
+### Delete chat
+DELETE http://api.yii2-starter-kit.localhost/v1/chat/3
+X-Api-Key: {{token}}
+
+### Enter chat as current user
+PUT http://api.yii2-starter-kit.localhost/v1/chat/2/enter
+X-Api-Key: {{token}}
+
+### List users in chat
+GET http://api.yii2-starter-kit.localhost/v1/chat/2/users
+X-Api-Key: {{token}}
+
+### Quit chat as current user
+PUT http://api.yii2-starter-kit.localhost/v1/chat/2/quit
+X-Api-Key: {{token}}
